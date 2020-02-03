@@ -1,0 +1,22 @@
+Resumen 5,6,7,8,9
+
+#Linear Regresion Models
+
+Los modelos predictivos son modelos matematicos, es decir, ecuaciones, que nos permiten predecir alguna variable de interès a partir de una o mas variables que se consideran relacionadas.
+
+#5.1 Modeling the whiteside data
+
+El marco de datos en blanco del paquete MASS presentado en el Capítulo 1 proporciona un ejemplo simple y fácil de interpretar que ilustra varios aspectos del problema de ajustar modelos de regresión lineal.
+
+#5.1.1
+Describing lines in the plane
+
+Este capitulo se centra en la representaciòn de pendiente-intereccion que describe casi cualquier linea en el plano en terminos de dos parametros: el parametro de la interseccion en el(eje y) y el parametro de pendiente.
+
+#5.1. MODELING THE WHITESIDE DATA
+
+/nada
+
+#5.1.2 Fitting lines to points in the plane:
+
+La función abline proporciona una forma extremadamente conveniente de mostrar líneas rectas en un gráfico, una vez que conocemos los parámetros de pendiente e intercepción que describen esas líneas. ¿cómo determinamos esos parámetros? ? Esta es la tarea del modelado de regresión lineal, el tema principal de este capítulo. El enfoque de solución básica es buscar los valores â y b̂ de los parámetros de intersección y pendiente que hacen que los puntos que se encuentran en esta línea se aproximen mejor a nuestros puntos de datos. Más específicamente, dada una colección de N valores x observados {x k} y de N valores y observados {y k}, queremos calcular esos valores â y b̂ de modo que esta condición se cumpla:
