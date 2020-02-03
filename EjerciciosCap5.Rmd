@@ -1,0 +1,72 @@
+---
+title: "EjerciciosCap1"
+output: html_document
+---
+```{r}
+#EJERCICIO 1 
+library(MASS)
+library(robustbase)
+commonAnimals <-intersect(rownames(mammals),rownames(Animals2))
+commonAnimals
+length(commonAnimals)
+```
+```{r}
+#Ejericio 1 b
+library(MASS)
+library(robustbase)
+commonAnimals <-setdiff(rownames(mammals),rownames(Animals2))
+commonAnimals
+```
+```{r}
+#1c
+commonAnimals <-setdiff(rownames(Animals2),rownames(mammals))
+commonAnimals
+
+```
+
+```{r}
+#2
+library(robustbase)
+par(mfrow=c(2,2))
+truehist(Animals2$brain)
+truehist(log(Animals2$brain))
+#qqPlot(Animals2$brain)
+title("Normal QQ-plot")
+#qqPlot(log(Animals2$brain))
+title("Normal QQ-plot")
+```
+
+```{r}
+#3
+libReturn<-library(MASS)
+libReturn
+str(libReturn)
+
+```
+
+
+
+```{r}
+#4
+library(MASS)
+str(cabbages)
+length(which(is.na(cabbages)))
+```
+
+```{r}
+#5
+library(car)
+#no se encontro la libreria
+summary(Chile)
+
+```
+```{r}
+#6
+library(MASS)
+library(car)
+str(cabbages)
+qqPlot(cabbages$HeadWt)
+qqPlot(cabbages$VitC)
+```
+
+

@@ -1,0 +1,180 @@
+---
+title: "ResumenCap2"
+author: "Cristian Echartea"
+date: "23/1/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Capitulo 3
+
+#Analisis de datos exploratorios
+
+el analisis exploratorio es el arte de mirar dentro de los datos en una manera cuidadosa y estructurada, la inicial descripcion  a sido seguida por un analisis de alto nivel con tecnicas usadas en  analisis exploratorio.
+
+1. Cuatro conceptos llave en la exploracion de datos
+2. Revelacion
+3. Residual
+4. Re-expresion
+5. Resistencia
+
+
+Revelacion refiere a la visualizacion de los datos previamentre anotados, son importantes en la parte exploratoria del analisis de datos. Una principal diferencia entre los modelos considerados de analisis exploratorios, en modelos predictivos es que esos modelos usados en el analisis exploratorio seguido son muy simples y aveces triviales.
+
+Mirando las diferencias entre los valores de datos individuales y una media o mediana pueden ser útiles en analisis de datos exploratorios, para el uso de comparacion.
+
+La reexpresión se refiere a la Aplicación de transformaciones matemáticas a una o más variables. La utilidad de esta idea es una consecuencia del hecho de que los valores de datos que se nos dan analizar no siempre están en su representación más informativa.  
+
+La resistencia se refiere a la capacidad de una caracterización de datos para evitar la influencia indebida de valores atípicos u otras anomalías de datos,un cuidadoso análisis exploratorio antes de intentar utilizar datos en explicar fenómenos, construir modelos predictivos o tomar decisiones es uno de las mejores formas de encontrar estas anomalías antes de que puedan afectar negativamente a nuestra
+resultados.
+
+#Una estrategia General
+
+Al explorar un nuevo conjunto de datos, la siguiente secuencia de preguntas básica suele ser útil:
+1.Evaluar las características generales del conjunto de datos, por ejemplo:
+
+¿Cuántos registros tenemos? Cuantas variables?.
+¿Cuáles son los nombres de las variables? ¿Son significativos?
+¿De qué tipo es cada variable, por ejemplo, numérica, categórica, lógica?
+¿Cuántos valores únicos tiene cada variable?
+¿Qué valor ocurre con mayor frecuencia y con qué frecuencia ocurre?
+¿Faltan observaciones? Si es así, ¿con qué frecuencia ocurre esto?
+
+2.Examinar estadísticas descriptivas para cada variable.
+
+3.Cuando sea posible, para cualquier variable de interés particular examine las visualizaciones
+exploratorias.
+
+4.Mirar anomalías de datos;
+
+5.Observe las relaciones entre variables clave utilizando las ideas descritas.
+
+6.Finalmente, resuma resultados en forma de un diccionario de datos, para servir como base para el posterior análisis y explicación de los resultados.
+
+
+Tipos de variables en la practica
+
+Una de las características clave de los datos incluidas en el resumen preliminar de datos. Como la mayoría de las otras plataformas de análisis de datos, R es compatible con un conjunto de tipos de variables predefinidos, incluidos numérico, de caracteres, lógico, y factores Desafortunadamente, estos tipos de variables básicas no siempre se devuelven por completo,al reflejar el "carácter real" de la variable.
+
+Un ejemplo importante son las variables de fecha, que pueden representarse en más de una forma, cada una de las cuales admite diferentes tipos de formatos: las fechas representadas como cadenas de caracteres como "15-nov-2015" son útil para lectores humanos, pero no proporcionan la base para calcular la cantidad de días entre esta fecha y otra.
+
+A menudo se desarrollan formatos de fecha especiales, que permiten la interpretación humana como los cálculos simples,  desafortunadamente, estas representaciones a menudo se pierden en la transferencia de datos de su fuente original a una sesión R, lo que requiere por parte de nosotros reconocer explícitamente las variables de fecha representadas como cadenas de caracteres y volver a codificarlos en un formato de fecha especial.
+
+
+Numericas contras Ordinal contra variables nominales
+
+
+Muchos de los problemas de los analisis de datos concierne con los datos numericos, el analisis de whiteside dataset es un caso en particular donde las variables primarias de interes donde el calor del consumo semanal de gas y la temperatura de afuera ambos son numeros, una importante caracteristica de los datos numericos es que se puede aplicar muchas operaciones matematicas que pueden ser calculadas, sumas, promedios, potencias, raices y otras muchas combinaciones o transformaciones, esto es posible por las formas basicas de la estadistica descriptiva como la desviacion estandar junto con otras herramientas de datos de caracterizacion.
+
+No todas las variables son numericas sin embargo y en la mayoria de las operaciones matematiocas no son aplicables las variables no numericas, denuevo whiteside dataset prove en la ilustracion the Insul variables es un ejemplo de categoria nominal, o factores de variables que pueden asumir esos dos valores cada uno representados con el caracter string Before y After
+
+Nosotros no podemos calcular sumas,diferencias productos, raices, potencias en esos valores de datos. Se necesitaria trabajar con variables nominales acerca de lo que podemos hacer, contar y comparar, haciendo preguntas como las siguientes dadas en una categorica variable C:
+
+Cuantas maneras distintas de valores o niveles hace la variable exibida?
+
+Como es el comportamiento de otra variable x variando sobre los niveles de C?
+
+
+la clase de variables ordinales, se refiere al orden categorico de variables o el orden de los factores. Esas variables asume los valores no numericos en un rango completo de operaciones matematicas y que no estan disponibles para que nosotros podamos trabajar con ellas.
+
+
+#Texto vs datos
+
+Las variables categoricas tambien conocidas como nominal o ordinal son comunmente representadas como caracteres strings.
+Los requerimentos principales para esta representacion es que cada distinto nivel de variables tengan un unico caracter de representacion string y sean designados seguidamente en casos favorables sean escogidos para proveer algunos grados para la interpretacion humana.
+
+
+#Resumiendo los datos numericos
+
+la media intenta darnos un "valor típico" para una variable numérica, mientras que la desviación estándar intenta transmitir una idea de la "dispersión" o "dispersión" de la observaciones de datos individuales en torno a este valor típico.
+
+las estadísticas descriptivas suelen ser caracterizaciones independientes del tamaño, que tienen el mismo formato e interpretación para conjuntos de datos pequeños que para conjuntos de datos grandes.
+
+Sin embargo, debido a que son resúmenes simples, las estadísticas descriptivas tienen un poder limitado para describir datos, y en casos desfavorables pueden ser engañosas.
+
+
+#Anomalias en los datos numericos
+
+Corresponde a los errores que pueden ser encontrado en los metadatos y son potencialmente problemas catastroficos, se debe estar al tanto de los temas de la sistematica de datos extraviados y distinguir los datos extraviados, esa anotacion es representada como un tipo particular de datos.
+
+
+#Los valores atipicos y su influencias
+
+La definicion adoptada aqui se refiere a la observacion donde podría aparece inconsistencias como recordatorio
+de ese data set en particular.
+
+#Detectando atipicos univariables
+
+El termino deteccion atipica univariable se refiere al proceso de identificacion de atipicos en una sola variable, en el caso de inconsistencias con recordatorio en los datos es tipicamente interpretado para decir usualmente lejos o cerca de los datos tipicos.
+Esta idea puede convertirse automaticamente en un procedimiento de deteccion atipica definido de manera calculada como valores tipicos por diferentes medidas para tipico o dispersion de datos y los limites inusuales que obtendremos de diferentos procedimientos automaticos de valores atipicos.
+
+
+La regla de edicion Tres Sigma
+
+Probablemente la mejor manera de conocer automaticamente la deteccion de procedimientos atipicos es la regla de edicion tres sigma,
+se conoce en la literatura estadistica de diferentes nombres como la desviacion estudiada identificada, se basa en la observacion por la aproximacion de datos Gausianos se basa en tres puntos.
+
+Los valores tipicos de los datos es x.
+
+Los datos esparcidos es la desviacion estandar.
+
+Los limites inusuales es t = 3 desviacones estandar.
+
+
+#Consejos practicos en la deteccion atipicas.
+
+Aplica a todos los tres procedimientos de deteccion atipica en tu secuencia de datos y cuidadosamente examina los resultados comparando con el numero atipicos detectados por cada procedimiento, los valores de los datos declarados y el rango de los datos de valores no declarados para los atipicos
+
+Realiza una aplicacion especifica de test rasonables para que ambos limites atipicos y los valores de los rangos no atipicos sean un rango nominal estando razonable y hacer que los valores perifericos parezcan lo extremadamente sospechosos.
+
+Examinar las graficas de datos con los limites atipicos indicados en la grafica, o con los puntos perifericos marcados en diferentes forma de puntos colores o resaltadores los cuales pueden ser determinados como sospechosos en el procedimiento de deteccion de atipicos.
+
+
+#Inliers y su deteccion
+
+El termino Inliers se refiere a puntos nominales en una secuencia de datos, o los  puntos no perifericos.
+Aqui refiere a estos terminos de dos maneras diferentes la primera la define como los valores de los datos dejados en el interior de las distribucion estadistica de distribucion y es el error, una de las fuentes de los puntos nominales es el disfrazado de datos perdidos.
+
+
+
+#Erroes en los metadatos
+
+incluyen detalladas definiciones de las variables, en rangos de valores admisibles o numeros de observaciones no registradas y las notaciones indicadas para utilizarlas con cualquier otra características o peculiaridades notables. Normalmente, sin embargo, los metadatos son mucho menos completos de lo que nos gustaría, y es difícil mantener el control de calidad porque los metadatos están altamente desestructurados.
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
